@@ -1,6 +1,6 @@
 # reactive-table
 
-[React.js](http://facebook.github.io/react/) component to generate table with [Bootstrap](http://getbootstrap.com) CSS classes.
+[React.js](http://facebook.github.io/react/) component to generate HTML table.
 
 ## Installation
 
