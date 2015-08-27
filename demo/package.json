@@ -1,7 +1,7 @@
 {
-  "name": "reactive-table-demo",
+  "name": "react-partial-table-demo",
   "version": "1.0.0",
-  "description": "Example for react-table-for-bootstrap package",
+  "description": "Example for react-partial-table library",
   "author": "Peter Moresi",
   "license": "MIT",
   "devDependencies": {
@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "react": "~0.13.0",
-    "reactive-table": "^1.0.0"
+    "react-html-table": "^1.0.0"
   }
 }

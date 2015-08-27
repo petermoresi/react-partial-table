@@ -1,14 +1,14 @@
 {
   "name": "react-partial-table",
   "version": "1.0.6",
-  "description": "React.js component to generate dynamic table",
+  "description": "Render HTML tables with your rules.",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petermoresi/react-bootstrap-table.git"
+    "url": "git+https://github.com/petermoresi/react-partial-table.git"
   },
   "keywords": [
     "React.js"
