@@ -78,8 +78,7 @@ export default class MyApp extends React.Component {
             numberOfRows={this.state.numberOfRows*2}
             interval={2}
             getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
-            headerRenderers={['#', 'Color', <span style={{color: 'green'}}>Hex Value</span>]}
-            columnRenderers={[]}>
+            headerRenderers={['#', 'Color', <span style={{color: 'green'}}>Hex Value</span>]}>
               <Column column="id" />
               <Column cellRenderer={(row) => `${row.name} (${row.hex})`}/>
               <Column cellRenderer={(row) => <span style={{
