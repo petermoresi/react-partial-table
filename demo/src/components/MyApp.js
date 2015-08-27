@@ -3,7 +3,7 @@
 */
 
 import React from 'react';
-import {Table, Column, TableConfig} from 'reactive-table';
+import {Table, Column, TableConfig} from 'react-partial-table';
 
 import Colors from './CrayolaColors';
 
@@ -33,11 +33,12 @@ export default class MyApp extends React.Component {
           updateStartRow={ (value) => { this.setState({ startRow: +value }) }.bind(this) }
           updateNumberOfRows={ (value) => { this.setState({ numberOfRows: +value }) }.bind(this) } />
 
+        <h1>Default</h1>
         <Table
-          headers={['#', 'Color', 'Hex Value']}
           startRow={this.state.startRow}
           numberOfRows={this.state.numberOfRows}
           getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
+          headerRenderers={['#', 'Color', 'Hex Value']}
           columnRenderers={[
             (row) => row.id,
             (row) => `${row.name} (${row.hex})`,
@@ -50,12 +51,14 @@ export default class MyApp extends React.Component {
           }
           />
 
+        <h1>Fixed Header Off</h1>
         <Table
-            headers={['#', 'Color', 'Hex Value']}
+            fixedHeader={false}
             startRow={this.state.startRow}
             numberOfRows={this.state.numberOfRows*2}
             interval={2}
             getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
+            headerRenderers={['#', 'Color', <span style={{color: 'red'}}>Hex Value</span>]}
             columnRenderers={[]}>
               <Column column="id" />
               <Column cellRenderer={(row) => `${row.name} (${row.hex})`}/>
@@ -68,12 +71,14 @@ export default class MyApp extends React.Component {
           </Table>
 
 
+        <h1>Header Off</h1>
         <Table
-            headers={['#', 'Color', 'Hex Value']}
+            showHeader={false}
             startRow={this.state.startRow-1}
             numberOfRows={this.state.numberOfRows*2}
             interval={2}
             getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
+            headerRenderers={['#', 'Color', <span style={{color: 'green'}}>Hex Value</span>]}
             columnRenderers={[]}>
               <Column column="id" />
               <Column cellRenderer={(row) => `${row.name} (${row.hex})`}/>
