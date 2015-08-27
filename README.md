@@ -1,10 +1,10 @@
-# reactive-table
+# react-partial-table
 
 [React.js](http://facebook.github.io/react/) component to generate HTML table.
 
 ## Installation
 
-    npm install reactive-table
+    npm install react-partial-table
 
 ## Components
 
