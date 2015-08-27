@@ -1,0 +1,34 @@
+{
+  "name": "reactive-table",
+  "version": "1.0.6",
+  "description": "React.js component to generate dynamic table",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petermoresi/react-bootstrap-table.git"
+  },
+  "keywords": [
+    "React.js"
+  ],
+  "author": "Peter Moresi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petermoresi/reactive-table"
+  },
+  "homepage": "https://github.com/petermoresi/reactive-table#readme",
+  "devDependencies": {
+    "babel-core": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "babel-loader": "^5.1.2",
+    "eslint-plugin-react": "^2.3.0",
+    "react-hot-loader": "^1.2.7",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2"
+  },
+  "dependencies": {
+    "react": "~0.13.0"
+  }
+}
