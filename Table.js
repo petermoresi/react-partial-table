@@ -1,21 +1,51 @@
-/* Render HTML Table
-*/
+/* React HTML Table
+ * The best table control of my life.
+ */
 
 import React, { Component, PropTypes } from 'react';
 
+var styles = require('./Table.css');
+
+// infinite range generator will run as fast as the data access allows.
 function range(begin, end, interval = 1) {
   var a = [];
+
   for (let i = begin; i < (begin+end); i += interval) {
     a.push(i);
   }
+
   return a;
 }
+
+export class Column extends Component {
+
+  constructor() {
+    super();
+  }
+
+  render() {
+    // children are configuration only.
+    // the render method in Table.js is all you need.
+  }
+}
+
+Column.PropTypes = {
+    cellRenderer: PropTypes.func,
+    field: PropTypes.string
+};
+
+Column.DefaultTypes = {
+    cellRenderer: (row) => { row[this.props.field]; },
+    field: 'id'
+};
+
+
 /*
 * React Component to generate Table with callbacks
 * to ensure that the required functionality can be
 * plugged in when you need it.
 */
-export default class Table extends Component {
+export class Table extends Component {
 
   constructor() {
     super();
@@ -28,7 +58,7 @@ export default class Table extends Component {
   render() {
 
     // redirect children to columnRenderers array.
-    if(this.props.children) {
+    if(this.props.children && Array.isArray(this.props.children)) {
       this.props.columnRenderers = this.props.children.map((n) => {
         return n.props.cellRenderer || function(row) {
           return row[n.props.column];
@@ -81,6 +111,7 @@ export default class Table extends Component {
     interval: PropTypes.number,
     showHeader: PropTypes.bool,
     fixedHeader: PropTypes.bool,
+    headerRenderers: PropTypes.array,
     columnRenderers: PropTypes.array,
     getRowAt: PropTypes.func,
     getRowClassName: PropTypes.func,
@@ -90,11 +121,12 @@ export default class Table extends Component {
   Table.defaultProps = {
     className: '',
     keyField: "id",
-    startRow: 1,
-    numberOfRows: 10,
+    startRow: 0,
+    numberOfRows: 0,
     interval: 1,
-    showHeader: true,
-    fixedHeader: true,
+    showHeader: false,
+    fixedHeader: false,
+    headerRenderers: [],
     columnRenderers: [],
     getRowAt: () => {},
     getRowClassName: () => {},

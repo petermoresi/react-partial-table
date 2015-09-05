@@ -3,7 +3,7 @@
 */
 
 import React from 'react';
-import {Table, Column, TableConfig} from 'react-partial-table';
+import {Table, Column} from './Table';
 
 import Colors from './CrayolaColors';
 
@@ -11,7 +11,7 @@ import Colors from './CrayolaColors';
  * this application presents and how it needs to be
  * organized.
  */
-export default class MyApp extends React.Component {
+export default class TestPage extends React.Component {
 
   constructor() {
     super();
@@ -22,16 +22,16 @@ export default class MyApp extends React.Component {
     };
   }
 
+  handleStartRowChanged(event) {
+    this.setState({ startRow: +event.currentTarget.value });
+  }
+
   render() {
     return (
       <div>
-
-        <TableConfig
-          getTableLength={() => this.state.rows.length }
-          startRow={this.state.startRow}
-          numberOfRows={this.state.numberOfRows}
-          updateStartRow={ (value) => { this.setState({ startRow: +value }) }.bind(this) }
-          updateNumberOfRows={ (value) => { this.setState({ numberOfRows: +value }) }.bind(this) } />
+        Start Row: <br/>
+        <input type="number" className="form-control" min="1"
+              onChange={ this.handleStartRowChanged.bind(this) } value={ this.state.startRow } />
 
         <h1>Default</h1>
         <Table
@@ -58,8 +58,7 @@ export default class MyApp extends React.Component {
             numberOfRows={this.state.numberOfRows*2}
             interval={2}
             getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
-            headerRenderers={['#', 'Color', <span style={{color: 'red'}}>Hex Value</span>]}
-            columnRenderers={[]}>
+            headerRenderers={['#', 'Color', <span style={{color: 'red'}}>Hex Value</span>]}>
               <Column column="id" />
               <Column cellRenderer={(row) => `${row.name} (${row.hex})`}/>
               <Column cellRenderer={(row) => <span style={{
@@ -78,8 +77,7 @@ export default class MyApp extends React.Component {
             numberOfRows={this.state.numberOfRows*2}
             interval={2}
             getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
-            headerRenderers={['#', 'Color', <span style={{color: 'green'}}>Hex Value</span>]}
-            columnRenderers={[]}>
+            headerRenderers={['#', 'Color', <span style={{color: 'green'}}>Hex Value</span>]}>
               <Column column="id" />
               <Column cellRenderer={(row) => `${row.name} (${row.hex})`}/>
               <Column cellRenderer={(row) => <span style={{

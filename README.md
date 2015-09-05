@@ -6,19 +6,51 @@
 
     npm install react-partial-table
 
-## Components
+## Component
+
+The table exposes two components:
 
 1. Table
+2. Column
 
-    The main component in the project.
+You can import the components with:
 
-2. TableConfig
+    var Table = require('react-partial-table').Table;
+    var Column = require('react-partial-table').Column;
 
-    A bootstrap row with 6 columns and table property view/edit controls.
+To create a partial table use:
 
-3. Column
+    <Table getRowAt={ (rowIndex) => return data[rowIndex] }
+           startRow={1}
+           numberOfRows={10}>
+           <Column header="Col A" field={0} />
+           <Column header="Col B" field={1} />
+           <Column header="Col C" field={2} />
+    </Table>
+    
+The table properties are:
 
-	Configuration for column rendering.
+- className: PropTypes.string
+- keyField: PropTypes.string
+- startRow: PropTypes.number
+- numberOfRows: PropTypes.number
+- interval: PropTypes.number
+- showHeader: PropTypes.bool
+- fixedHeader: PropTypes.bool
+- headerRenderers: PropTypes.array<func>
+- columnRenderers: PropTypes.array<func>
+- getRowAt: PropTypes.func
+- getRowClassName: PropTypes.func
+- handleRowClick: PropTypes.func
 
+The column properties are:
 
-See demo directory for example.
+- headerRenderer: PropTypes.func (planned)
+- cellRenderer: PropTypes.func
+- field: PropTypes.string
+
+## Running Software
+
+    You need github.com/petehunt/rwb to build/run this software.
+
+    Please see the rwb project page for more information about to use.
