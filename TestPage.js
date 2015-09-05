@@ -37,6 +37,8 @@ export default class TestPage extends React.Component {
         <Table
           startRow={this.state.startRow}
           numberOfRows={this.state.numberOfRows}
+          fixedHeader={true}
+          showHeader={true}
           getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
           headerRenderers={['#', 'Color', 'Hex Value']}
           columnRenderers={[
@@ -57,6 +59,7 @@ export default class TestPage extends React.Component {
             startRow={this.state.startRow}
             numberOfRows={this.state.numberOfRows*2}
             interval={2}
+            showHeader={true}
             getRowAt={ (rowIndex) => this.state.rows[rowIndex] }
             headerRenderers={['#', 'Color', <span style={{color: 'red'}}>Hex Value</span>]}>
               <Column column="id" />
