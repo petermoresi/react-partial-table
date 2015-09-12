@@ -1,8 +1,8 @@
 {
   "name": "react-partial-table",
-  "version": "2.0.0",
-  "description": "Render HTML tables with your rules.",
-  "main": "lib/index.js",
+  "version": "3.0.0",
+  "description": "Render a table tag with callbacks to get data.",
+  "main": "Table.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/petermoresi/react-partial-table.git"
   },
   "keywords": [
-    "React.js"
+    "React.js",
+    "react"
   ],
   "author": "Peter Moresi",
   "license": "MIT",
@@ -26,9 +27,14 @@
     "eslint-plugin-react": "^2.3.0",
     "react-hot-loader": "^1.2.7",
     "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": "^1.8.2",
+    "react-router": "^0.13.3"
   },
   "dependencies": {
     "react": "~0.13.0"
+  },
+  "react": {
+    "routes": "./routes.js",
+    "rwb": "0.0.2"
   }
 }
