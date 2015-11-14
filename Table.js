@@ -1,5 +1,4 @@
-/* React HTML Table
- * The best table control of my life.
+/* React HTML Tables
  */
 
 import React, { Component, PropTypes } from 'react';

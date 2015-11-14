@@ -1,5 +1,4 @@
-/* React HTML Table
- * The best table control of my life.
+/* React HTML Tables
  */
 
 'use strict';
@@ -16,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -48,10 +47,7 @@ var Column = (function (_Component) {
 
   _createClass(Column, [{
     key: 'render',
-    value: function render() {
-      // children are configuration only.
-      // the render method in Table.js is all you need.
-    }
+    value: function render() {}
   }]);
 
   return Column;
@@ -120,7 +116,7 @@ var Table = (function (_Component2) {
             return _react2['default'].createElement(
               'th',
               { key: I },
-              typeof col === "function" ? col(I) : col
+              typeof col === 'function' ? col(I) : col
             );
           })
         )
@@ -148,7 +144,7 @@ var Table = (function (_Component2) {
                 return _react2['default'].createElement(
                   'td',
                   { key: i + '-' + row[_this.props.keyField] },
-                  typeof col === "function" ? col(row) : row[col]
+                  typeof col === 'function' ? col(row) : row[col]
                 );
               })
             );
@@ -180,7 +176,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   className: '',
-  keyField: "id",
+  keyField: 'id',
   startRow: 0,
   numberOfRows: 0,
   interval: 1,
@@ -192,3 +188,6 @@ Table.defaultProps = {
   getRowClassName: function getRowClassName() {},
   handleRowClick: function handleRowClick() {}
 };
+
+// children are configuration only.
+// the render method in Table.js is all you need.

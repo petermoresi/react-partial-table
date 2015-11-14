@@ -1,6 +1,6 @@
 {
   "name": "react-partial-table",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Render a table tag with callbacks to get data.",
   "main": "Table.compiled.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "React.js",
-    "react"
+    "react",
+    "react-component"
   ],
   "author": "Peter Moresi",
   "license": "MIT",
